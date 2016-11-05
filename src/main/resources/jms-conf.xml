@@ -10,11 +10,13 @@
         <property name="configuredResourceId" value="jmsConsumer"/>
     </bean>
 
-    <bean id="jmsListener" class="org.springframework.jms.listener.IkasanMessageListenerContainer">
+    <!--<bean id="jmsListener" class="org.springframework.jms.listener.IkasanMessageListenerContainer">-->
+    <bean id="jmsListener" class="hello.SampleIkasanMessageListenerContainer">
         <property name="messageListener" ref="jmsConsumer" />
         <property name="exceptionListener" ref="jmsConsumer" />
         <property name="errorHandler" ref="jmsConsumer" />
         <property name="transactionManager" ref="transactionManager" />
+        <property name="localTransactionManager" ref="arjunaTransactionManager" />
     </bean>
 
 

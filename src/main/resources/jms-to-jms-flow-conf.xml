@@ -14,7 +14,7 @@
         <property name="ikasanSerialiserFactory" ref="ikasanSerialiserFactory" />
         <property name="consumer">
             <bean class="org.ikasan.builder.FlowElementFactory">
-                <property name="name"       value="Consumer Name"/>
+                <property name="name"       value="JMS Consumer"/>
                 <property name="component"  ref="jmsConsumer"/>
                 <property name="transition" ref="jmsProducerFlowElement"/>
             </bean>
@@ -24,7 +24,7 @@
 
     <!-- Flow Element - Producer -->
     <bean id="jmsProducerFlowElement" class="org.ikasan.builder.FlowElementFactory">
-        <property name="name"               value="JMS Producer Name"/>
+        <property name="name"               value="JMS Producer"/>
         <property name="component"          ref="jmsProducer" />
     </bean>
 
