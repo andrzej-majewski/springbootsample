@@ -9,11 +9,16 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.transaction.TransactionManager;
 
-@SpringBootApplication @EnableAutoConfiguration public class Application
+@SpringBootApplication
+@EnableAutoConfiguration
+
+public class Application
 {
     public static void main(String[] args) throws Exception
     {
@@ -25,9 +30,5 @@ import javax.transaction.TransactionManager;
         {
             System.out.println(beanName);
         }
-        Flow sourceFlow = context.getBean(Flow.class);
-        sourceFlow.start();
-        System.out.println("Count is " + sourceFlow.getModuleName());
-        System.out.println("Count is " + sourceFlow.getState());
     }
 }

@@ -17,47 +17,28 @@
     <!-- Additional lines to be added here... -->
 
     <dependencies>
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-data-jpa</artifactId>-->
-        <!--</dependency>-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jta-narayana</artifactId>
         </dependency>
 
-        <!--
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jta-atomikos</artifactId>
-        </dependency>
-        -->
-      <!--
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
--->
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jms</artifactId>
             <version>4.3.3.RELEASE</version>
         </dependency>
 
-        <!--
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-hornetq</artifactId>
-        </dependency>
-        -->
-
         <dependency>
             <groupId>org.hornetq</groupId>
             <artifactId>hornetq-jms-client</artifactId>
             <version>2.3.12.Final</version>
         </dependency>
-
 
         <dependency>
             <groupId>org.jboss</groupId>
@@ -75,34 +56,10 @@
             <artifactId>xnio-api</artifactId>
             <version>3.0.10.GA</version>
         </dependency>
-        <!--
-        <dependency>
-            <groupId>org.hornetq</groupId>
-            <artifactId>hornetq-jms-server</artifactId>
-            <version>2.4.1.Final</version>
-        </dependency>
--->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-activemq</artifactId>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-        <!--<groupId>org.apache.activemq</groupId>-->
-        <!--<artifactId>artemis-jms-server</artifactId>-->
-        <!--<exclusions>-->
-        <!--<exclusion>-->
-        <!--<artifactId>geronimo-jms_2.0_spec</artifactId>-->
-        <!--<groupId>org.apache.geronimo.specs</groupId>-->
-        <!--</exclusion>-->
-        <!--</exclusions>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
         </dependency>
-
-
 
         <!--
         <dependency>
@@ -120,13 +77,26 @@
                     <groupId>org.slf4j</groupId>
                     <artifactId>slf4j-jdk14</artifactId>
                 </exclusion>
+                    <exclusion>
+                        <groupId>geronimo-spec</groupId>
+                        <artifactId>geronimo-spec-j2ee</artifactId>
+
+                    </exclusion>
             </exclusions>
+
         </dependency>
 
         <dependency>
             <groupId>org.ikasan</groupId>
             <artifactId>ikasan-jms-spring</artifactId>
             <version>${version.ikasan}</version>
+            <exclusions>
+                <exclusion>
+                        <groupId>geronimo-spec</groupId>
+                        <artifactId>geronimo-spec-j2ee</artifactId>
+
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
@@ -164,23 +134,46 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
-            <!--<version>${version.org.hibernate}</version>-->
             <version>4.3.2.Final</version>
         </dependency>
 
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <!--<version>${version.org.hibernate}</version>-->
             <version>${version.org.hibernate}</version>
         </dependency>
 
-        <!--<dependency>-->
 
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-test</artifactId>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
+        <!-- web console -->
+                <dependency>
+                    <groupId>org.ikasan</groupId>
+                    <artifactId>ikasan-webconsole-skinny-war</artifactId>
+                    <version>${version.ikasan}</version>
+
+                    <type>war</type>
+                </dependency>
+                <dependency>
+                    <groupId>org.ikasan</groupId>
+                    <artifactId>ikasan-webconsole-war</artifactId>
+                    <version>${version.ikasan}</version>
+
+                    <type>pom</type>
+
+
+                </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+        </dependency>
+
     </dependencies>
 
     <properties>
