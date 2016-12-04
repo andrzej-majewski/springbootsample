@@ -1,19 +1,12 @@
 package hello;
 
-import java.io.Closeable;
 import java.util.Arrays;
 
-import org.ikasan.flow.visitorPattern.VisitingInvokerFlow;
-import org.ikasan.spec.flow.Flow;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.transaction.TransactionManager;
 
 @SpringBootApplication
 @EnableAutoConfiguration
